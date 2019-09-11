@@ -48,14 +48,14 @@ int main() {
         cin >> guessRow;
         cin >> guessCol;
 
-        // Scales input so user can enter numbers 1-3
-        guessRow--;
-        guessCol--;
-
         //Check to make sure input is within range
         if (guessRow < 1 || guessRow > 3 || guessCol < 1 || guessCol > 3) {
             cout << "Error! Invalid entry" << endl;
         }
+
+        // Scales input so user can enter numbers 1-3
+        guessRow--;
+        guessCol--;
 
         //Increment guess number
         guesses++;
