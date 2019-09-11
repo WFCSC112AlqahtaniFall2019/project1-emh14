@@ -27,19 +27,21 @@ int main() {
     while (!hit) {
         for (int i = 0; i < 3; i++) {
             if (i > 0) {
-                cout << endl << "~~~~~" << endl;
+                cout << endl << "~~~~~" << endl;//Row Border
             }
             for (int j = 0; j < 3; j++) {
                 if (j > 0) {
-                    cout << "!";
+                    cout << "!";//Column border
                 }
                 if (grid.at(i).at(j) == false) {
                     cout << " ";
                 } else {
-                    cout << "O";
+                    cout << "O"; //Denotes "miss"
                 }
             }
         }
+
+        //Prompt for guesses
         cout << endl << endl << "Location (Row[1-3] Column[1-3]): " << endl;
         int guessRow;
         int guessCol;
@@ -62,7 +64,7 @@ int main() {
         //Increment guess number
         guesses++;
 
-        //Check Location for Hit
+        //Check if Guessed Location is a Hit
         if (guessRow == shipX && guessCol == shipY) {
             hit = true;
         } else {
@@ -74,22 +76,23 @@ int main() {
     //Prints game board revealing the ship's location
     for (int i = 0; i < 3; i++) {
         if (i > 0) {
-            cout << endl << "~~~~~" << endl;
+            cout << endl << "~~~~~" << endl;//Row Border
         }
         for (int j = 0; j < 3; j++) {
             if (j > 0) {
-                cout << "!";
+                cout << "!";//Column border
             }
             if (i == shipX && j == shipY) {
-                cout << "X";
+                cout << "X";//Denotes "hit"
             }
             if (grid.at(i).at(j) == false) {
                 cout << " ";
             } else {
-                cout << "O";
+                cout << "O";//Denotes "miss"
             }
         }
     }
+    //Finish game
     cout << endl << " You sunk my battleship! Number of guesses: " << guesses;
     return 0;
 }
