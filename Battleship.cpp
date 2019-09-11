@@ -1,3 +1,9 @@
+/* Ethan Harrison
+ * CSC 112
+ * Project 1
+ * Battleship
+ * */
+
 #include <iostream>
 #include <vector>
 
