@@ -49,8 +49,10 @@ int main() {
         cin >> guessCol;
 
         //Check to make sure input is within range
-        if (guessRow < 1 || guessRow > 3 || guessCol < 1 || guessCol > 3) {
-            cout << "Error! Invalid entry" << endl;
+        while (guessRow < 1 || guessRow > 3 || guessCol < 1 || guessCol > 3) {
+            cout << "Error! Invalid entry, guess again" << endl << "Location (Row[1-3] Column[1-3]): " << endl;
+            cin >> guessRow;
+            cin >> guessCol;
         }
 
         // Scales input so user can enter numbers 1-3
