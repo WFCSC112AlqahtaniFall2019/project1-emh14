@@ -16,8 +16,8 @@ int main() {
 
     //Randomly select location for battle ship
     srand(time(NULL));
-    int shipX = rand() % 3;
-    int shipY = rand() % 3;
+    int shipX = rand() % 3;//Ship's x-coordinate location (Where on the row?)
+    int shipY = rand() % 3;//Ship's y-coordinate location (Where on the column?)
 
     //Begin playing game
     int guesses = 0;
