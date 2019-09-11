@@ -74,6 +74,7 @@ int main() {
     }
 
     //Prints game board revealing the ship's location
+    bool printedX = false;//Keeps track of whether the X to mark "hit" has been printed
     for (int i = 0; i < 3; i++) {
         if (i > 0) {
             cout << endl << "~~~~~" << endl;//Row Border
@@ -84,12 +85,15 @@ int main() {
             }
             if (i == shipX && j == shipY) {
                 cout << "X";//Denotes "hit"
+                printedX = true;
             }
-            if (grid.at(i).at(j) == false) {
+            if (grid.at(i).at(j) == false && printedX == false){//Only print space if there is no X
                 cout << " ";
-            } else {
+            } else if (printedX == false) {
                 cout << "O";//Denotes "miss"
             }
+
+            printedX = false;//Resets variable so loop starts fresh
         }
     }
     //Finish game
